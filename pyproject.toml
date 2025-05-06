@@ -17,6 +17,7 @@ platforms = ["osx-arm64"]
 multicam_ego_sync = { path = ".", editable = true }
 
 [tool.pixi.tasks]
+app = "python tools/app.py"
 
 [tool.pixi.dependencies]
 python = ">=3.13.3,<3.14"

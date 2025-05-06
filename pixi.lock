@@ -2197,7 +2197,7 @@ packages:
 - pypi: .
   name: multicam-ego-sync
   version: 0.1.0
-  sha256: 6888158423793085df0e71b3888fb16a5f6400427af7674332d6f64d93a33830
+  sha256: e77e0bd6033cad68d650f215c52f365edc2bbcb00734543a23a15e45958c3e2f
   requires_dist:
   - mmcv-lite>=2.2.0,<3
   - gradio-rerun>=0.23.1,<0.24
