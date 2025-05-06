@@ -1,0 +1,53 @@
+[project]
+authors = [{ name = "Pablo Vela", email = "pablovela5620@gmail.com" }]
+name = "multicam-ego-sync"
+requires-python = ">= 3.11"
+version = "0.1.0"
+dependencies = ["mmcv-lite>=2.2.0,<3", "gradio-rerun>=0.23.1,<0.24"]
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[tool.pixi.pypi-dependencies]
+multicam_ego_sync = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+
+[tool.pixi.dependencies]
+python = ">=3.13.3,<3.14"
+tyro = ">=0.9.1,<0.10"
+rich = ">=13.9.4,<14"
+tqdm = ">=4.67.1,<5"
+icecream = ">=2.1.3,<3"
+pyserde = ">=0.22.3,<0.23"
+rerun-sdk = ">=0.23.1,<0.24"
+beartype = ">=0.20.2,<0.21"
+
+[tool.ruff]
+line-length = 150
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+ignore = [
+    "E501",   # Line too long.
+    "F722",   # Forward annotation false positive from jaxtyping. Should be caught by pyright.
+    "F821",   # Forward annotation false positive from jaxtyping. Should be caught by pyright.
+    "SIM117", # Use a single `with` statement with multiple contexts instead of nested `with` statements
+]
